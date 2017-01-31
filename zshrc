@@ -21,7 +21,9 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(github cap gem lol zsh-syntax-highlighting bundler heroku vim)
+plugins=(git github git-flow cap gem lol zsh-syntax-highlighting bundler heroku vim zsh-autosuggestions)
+
+export UNBUNDLED_COMMANDS=ruby
 
 source /etc/profile
 source $ZSH/oh-my-zsh.sh
@@ -57,10 +59,11 @@ ZSH_HIGHLIGHT_STYLES+=(
 
 #bindkey "\e[H" beginning-of-line
 #bindkey "\e[F" end-of-line
-bindkey "\e[1;5D" backward-word
-bindkey "\e[1;5C" forward-word
-bindkey "^[OD" backward-word
-bindkey "^[OC" forward-word
+#bindkey "\e[1;5D" backward-word
+#bindkey "\e[1;5C" forward-word
+#bindkey "^[OD" backward-word
+#bindkey "^[OC" forward-word
+bindkey ^l end-of-line
 
 alias noh="unsetopt sharehistory"
 
@@ -69,10 +72,59 @@ unset RUBYOPT
 
 alias nogit="disable_git_prompt_info; compdef -d git"
 alias nog="nogit"
-alias npm_bin='PATH=`pwd`/node_modules/.bin:$PATH; rehash'
+alias npm_bin="PATH=`pwd`/node_modules/.bin:$PATH; rehash"
 
-PATH=~/bin:~/node_modules/.bin:/usr/local/bin:/usr/local/sbin:$PATH
+PATH=~/bin/:~/node_modules/.bin/:$PATH
 export EDITOR=vim
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 cd . # to rvm reload
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export PROMPT="%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%})%n:%{$fg_bold[blue]%}%c %# %{$reset_color%}"
+
+# Do not show hidden files in the list
+set match-hidden-files off
+ 
+# Auto complete ignoring case
+set show-all-if-ambiguous on
+set completion-ignore-case on
+
+# Hostname
+HOSTNAME=Bin
+
+# Android path
+export PATH=/srv/profiler/current/opt/android-sdk-linux/platform-tools:$PATH
+
+export PATH=~/Dev/env/adt/sdk/tools/:~/Dev/env/adt/sdk/platform-tools/:~/Dev/env/adt/ndk/:~/Dev/env/adt/sdk/build-tools/21.1.2/:$PATH
+
+export M2_HOME=~/Dev/env/maven
+export M2=$M2_HOME/bin
+export MAVEN_OPTS="-Xms256m -Xmx512m"
+export PATH=$M2:$PATH
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
+export PATH=$JAVA_HOME/bin:$PATH
+
+export PATH=/usr/local/mysql/bin:$PATH
+
+export XAUTHORITY=~/.Xauthority
+
+export ANDROID_HOME=~/Dev/env/adt/sdk
+
+export ANDROID_VIEW_CLIENT_HOME=~/AndroidViewClient-master/src
+
+export PATH=/usr/local/bin:$PATH
+
+alias nd1='ssh ec2-user@nat.nimbledroid.com'
+alias nd2='ssh ec2-user@52.8.52.214'
+alias nd3='ssh ec2-user@52.3.158.229'
+alias tmux='tmux -2'
+alias vpn1='sudo openvpn /home/shenbin/nimbledroid/nimbleweb-kitchen/vpn-client-conf/anonymous-ubuntu.ovpn'
+alias vpn2='sudo openvpn /home/shenbin/nimbledroid/nimbleweb-kitchen/vpn-client-conf/staging-ubuntu.ovpn'
+alias vpn3='sudo openvpn /home/shenbin/nimbledroid/nimbleweb-kitchen/vpn-client-conf/testing-ubuntu.ovpn'
+
+alias jstags='find . -type f -iregex .*\.js$ -not -path "./node_modules/*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
+
+export NVM_DIR="/Users/shenb/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
