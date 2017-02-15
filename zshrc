@@ -128,3 +128,12 @@ alias jstags='find -E . -type f -regex ".*.(js|jsx)" -not -path "./node_modules/
 
 export NVM_DIR="/Users/shenb/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+run() {
+    number=$1
+    shift
+    for i in `seq $number`; do
+      echo ==========iteration $i==========
+      $@
+    done
+}
