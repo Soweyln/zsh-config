@@ -124,7 +124,7 @@ alias vpn1='sudo openvpn /home/shenbin/nimbledroid/nimbleweb-kitchen/vpn-client-
 alias vpn2='sudo openvpn /home/shenbin/nimbledroid/nimbleweb-kitchen/vpn-client-conf/staging-ubuntu.ovpn'
 alias vpn3='sudo openvpn /home/shenbin/nimbledroid/nimbleweb-kitchen/vpn-client-conf/testing-ubuntu.ovpn'
 
-alias jstags='find . -type f -iregex .*\.js$ -not -path "./node_modules/*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
+alias jstags='find -E . -type f -regex ".*.(js|jsx)" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
 
 export NVM_DIR="/Users/shenb/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
