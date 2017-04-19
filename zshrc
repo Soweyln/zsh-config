@@ -115,25 +115,25 @@ export ANDROID_HOME=~/Dev/env/adt/sdk
 export ANDROID_VIEW_CLIENT_HOME=~/AndroidViewClient-master/src
 
 export PATH=/usr/local/bin:$PATH
+export DYLD_FORCE_FLAT_NAMESPACE=1
 
-alias nd1='ssh ec2-user@nat.nimbledroid.com'
-alias nd2='ssh ec2-user@52.8.52.214'
-alias nd3='ssh ec2-user@52.3.158.229'
+export PATH="/usr/local/opt/mysql/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+
+export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix icu4c)/lib"
+export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix icu4c)/include"
+
 alias tmux='tmux -2'
-alias vpn1='sudo openvpn /home/shenbin/nimbledroid/nimbleweb-kitchen/vpn-client-conf/anonymous-ubuntu.ovpn'
-alias vpn2='sudo openvpn /home/shenbin/nimbledroid/nimbleweb-kitchen/vpn-client-conf/staging-ubuntu.ovpn'
-alias vpn3='sudo openvpn /home/shenbin/nimbledroid/nimbleweb-kitchen/vpn-client-conf/testing-ubuntu.ovpn'
+# alias vim='/usr/local/Cellar/macvim/8.0-130/MacVim.app/Contents/MacOS/Vim'
 
-alias jstags='find -E . -type f -regex ".*.(js|jsx)" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
+alias jstags='find . -type f -iregex .*\.js$ -not -path "./node_modules/*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
 
-export NVM_DIR="/Users/shenb/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="/Users/bin/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-run() {
-    number=$1
-    shift
-    for i in `seq $number`; do
-      echo ==========iteration $i==========
-      $@
-    done
-}
+export PIP_INDEX_URL=https://devpi.hioscar.com/root/oscar/+simple/
+export WORKON_HOME=$HOME/.virtualenvs
+
+eval "$(pyenv init -)"
+pyenv virtualenvwrapper
