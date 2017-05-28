@@ -78,8 +78,8 @@ export PATH="/usr/local/opt/mysql/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
-export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix icu4c)/lib"
-export CPPFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix icu4c)/include"
+export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include -I/usr/local/opt/icu4c/include"
 
 # export PATH=/srv/profiler/current/opt/android-sdk-linux/platform-tools:$PATH
 # export PATH=~/Dev/env/adt/sdk/tools/:~/Dev/env/adt/sdk/platform-tools/:~/Dev/env/adt/ndk/:~/Dev/env/adt/sdk/build-tools/21.1.2/:$PATH
