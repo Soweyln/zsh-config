@@ -60,13 +60,6 @@ set completion-ignore-case on
 
 HOSTNAME=Bin
 
-export NVM_DIR="/Users/bin/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-cd . # to rvm reload
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 export PIP_INDEX_URL=https://devpi.hioscar.com/root/oscar/+simple/
 
 export WORKON_HOME=$HOME/.virtualenvs
@@ -93,5 +86,17 @@ alias tmux='tmux -2'
 alias vim='/usr/local/bin/vim'
 alias jstags='find . -type f -iregex .*\.js$ -not -path "./node_modules/*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
 
-eval "$(pyenv init -)"
-pyenv virtualenvwrapper
+export NVM_DIR="/Users/bin/.nvm"
+lnvm() {
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+}
+
+export PATH="$PATH:$HOME/.rvm/bin"
+lrvm() {
+  [ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
+}
+
+lpyenv() {
+  eval "$(pyenv init -)"
+  pyenv virtualenvwrapper
+}
