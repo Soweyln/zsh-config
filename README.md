@@ -3,7 +3,7 @@ Installation
 
 To install, run
 
-    git clone git://github.com/nviennot/zsh-config.git ~/.zsh
+    git clone https://bitbucket.org/shenbin04/zsh-config ~/.vim
     cd ~/.zsh
     make install
 
@@ -19,8 +19,6 @@ Key Bindings
 `Ctrl + u` Go up in the directory structure  
 `Ctrl + k` ls  
 `Alt + v` vim  
-
-Not ideal, I'm open to suggestions.
 
 Features
 --------
