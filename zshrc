@@ -100,3 +100,5 @@ lpyenv() {
   eval "$(pyenv init -)"
   pyenv virtualenvwrapper
 }
+
+alias workon='lpyenv && workon'
