@@ -84,7 +84,7 @@ export GIT_EDITOR='/usr/local/bin/vim'
 
 alias tmux='tmux -2'
 alias vim='/usr/local/bin/vim'
-alias jstags='find . -type f -iregex .*\.js$ -not -path "./node_modules/*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
+alias jstags='find -E . -type f -iregex ".*\.jsx?$" -not -path "*node_modules*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
 
 export NVM_DIR="/Users/bin/.nvm"
 lnvm() {
