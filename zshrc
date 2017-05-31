@@ -102,3 +102,12 @@ lpyenv() {
 }
 
 alias workon='lpyenv && workon'
+
+alias r_manhattan='python python/manhattan/run.py'
+alias r_rosco='python internal-site/internal_site/run.py'
+alias r_hippo='python python/hippo/run.py'
+alias r_webpack_manhattan='scripts/webpack_dev.js manhattan'
+alias r_webpack_rosco='scripts/webpack_dev.js rosco'
+alias r_webpack_hippo='scripts/webpack_dev.js hippo'
+
+lnvm
