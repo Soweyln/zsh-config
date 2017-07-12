@@ -53,7 +53,7 @@ export PROMPT="%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%})%n:%{$fg_bold[blue]%}%c
 
 # Do not show hidden files in the list
 set match-hidden-files off
- 
+
 # Auto complete ignoring case
 set show-all-if-ambiguous on
 set completion-ignore-case on
@@ -74,7 +74,7 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/icu4c/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include -I/usr/local/opt/icu4c/include"
 
-# export PATH=/srv/profiler/current/opt/android-sdk-linux/platform-tools:$PATH
+export PATH=/Users/bin/Library/Android/sdk/platform-tools/:$PATH
 # export PATH=~/Dev/env/adt/sdk/tools/:~/Dev/env/adt/sdk/platform-tools/:~/Dev/env/adt/ndk/:~/Dev/env/adt/sdk/build-tools/21.1.2/:$PATH
 # export ANDROID_HOME=~/Dev/env/adt/sdk
 # export ANDROID_VIEW_CLIENT_HOME=~/AndroidViewClient-master/src
