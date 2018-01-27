@@ -39,6 +39,9 @@ ZSH_HIGHLIGHT_STYLES+=(
 )
 
 bindkey ^l end-of-line
+bindkey ^r history-incremental-pattern-search-backward
+bindkey ^p history-search-backward
+bindkey ^n history-search-forward
 
 export DYLD_FORCE_FLAT_NAMESPACE=1
 export EDITOR=vim
