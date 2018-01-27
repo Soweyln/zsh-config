@@ -97,4 +97,8 @@ alias r_webpack_rosco='scripts/webpack_dev.js rosco'
 alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
 lnvm
