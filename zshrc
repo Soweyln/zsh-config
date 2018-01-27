@@ -45,14 +45,7 @@ bindkey ^n history-search-forward
 
 export DYLD_FORCE_FLAT_NAMESPACE=1
 export EDITOR=vim
-export GIT_EDITOR='/usr/local/bin/vim'
-export NVM_DIR="/Users/bin/.nvm"
-export PIP_INDEX_URL=https://devpi.hioscar.com/root/oscar/+simple/
-# export PYTHONPATH=$PYTHONPATH:/Users/bin/dev/oscar/python/
-# export PYTHONPATH=$PYTHONPATH:/Users/bin/dev/oscar/python/batmobile
 export PROMPT="%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%})%n:%{$fg_bold[blue]%}%c %# %{$reset_color%}"
-export WORKON_HOME=$HOME/.virtualenvs
-
 export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/icu4c/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include -I/usr/local/opt/icu4c/include"
 
@@ -62,7 +55,10 @@ export PATH=$HOME/.fastlane/bin:$PATH
 export PATH=/usr/local/opt/mysql/bin:$PATH
 export PATH=/usr/local/opt/icu4c/bin:$PATH
 export PATH=/usr/local/opt/imagemagick@6/bin:$PATH
-export PATH=/Users/bin/Library/Android/sdk/platform-tools/:$PATH
+
+include () {
+  [[ -f "$1" ]] && source "$1"
+}
 
 lnvm() {
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -91,14 +87,9 @@ alias nogit="disable_git_prompt_info; compdef -d git"
 alias npm_bin="PATH=`pwd`/node_modules/.bin:$PATH; rehash"
 alias workon='lpyenv && workon'
 
-alias r_hippo='python python/hippo/run.py'
-alias r_manhattan='python python/manhattan/run.py'
-alias r_rosco='python internal-site/internal_site/run.py'
-alias r_webpack_hippo='scripts/webpack_dev.js hippo'
-alias r_webpack_manhattan='scripts/webpack_dev.js manhattan'
-alias r_webpack_rosco='scripts/webpack_dev.js rosco'
-
 alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
 lnvm
+
+include $HOME/.zshrc.local
