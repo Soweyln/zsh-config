@@ -89,7 +89,6 @@ alias jstags='find -E . -type f -iregex ".*\.jsx?$" -not -path "*node_modules*" 
 alias nog="nogit"
 alias nogit="disable_git_prompt_info; compdef -d git"
 alias npm_bin="PATH=`pwd`/node_modules/.bin:$PATH; rehash"
-alias tmux='tmux -2'
 alias workon='lpyenv && workon'
 
 alias r_hippo='python python/hippo/run.py'
