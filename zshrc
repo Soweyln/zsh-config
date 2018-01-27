@@ -1,6 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="gentoo"
-export DISABLE_AUTO_UPDATE="true"
+export DISABLE_AUTO_UPDATE=true
 
 plugins=(git gitfast vi-mode zsh-syntax-highlighting zsh-autosuggestions) # bundler github git-flow cap gem lol heroku
 
@@ -63,9 +63,6 @@ export PATH=/usr/local/opt/mysql/bin:$PATH
 export PATH=/usr/local/opt/icu4c/bin:$PATH
 export PATH=/usr/local/opt/imagemagick@6/bin:$PATH
 export PATH=/Users/bin/Library/Android/sdk/platform-tools/:$PATH
-# export PATH=~/Dev/env/adt/sdk/tools/:~/Dev/env/adt/sdk/platform-tools/:~/Dev/env/adt/ndk/:~/Dev/env/adt/sdk/build-tools/21.1.2/:$PATH
-# export ANDROID_HOME=~/Dev/env/adt/sdk
-# export ANDROID_VIEW_CLIENT_HOME=~/AndroidViewClient-master/src
 
 lnvm() {
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -79,6 +76,14 @@ lpyenv() {
   eval "$(pyenv init -)"
   pyenv virtualenvwrapper
 }
+
+ldocker() {
+  eval "$(docker-machine env)"
+}
+
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
 
 alias jstags='find -E . -type f -iregex ".*\.jsx?$" -not -path "*node_modules*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
 alias nog="nogit"
@@ -96,9 +101,5 @@ alias r_webpack_rosco='scripts/webpack_dev.js rosco'
 
 alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
-
-if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
-fi
 
 lnvm
