@@ -10,6 +10,7 @@ unsetopt correctall
 unsetopt auto_name_dirs
 
 # General
+export DYLD_FORCE_FLAT_NAMESPACE=1
 export DISABLE_AUTO_UPDATE=true
 export EDITOR=vim
 
