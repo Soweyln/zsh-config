@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="gentoo"
 
-plugins=(git gitfast vi-mode zsh-syntax-highlighting zsh-autosuggestions) # bundler github git-flow cap gem lol heroku
+plugins=(git gitfast vi-mode zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -71,7 +71,6 @@ include () {
 
 lnvm() {
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 }
 
 lrvm() {
