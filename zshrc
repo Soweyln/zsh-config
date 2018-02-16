@@ -62,6 +62,8 @@ export PATH=/usr/local/opt/mysql/bin:$PATH
 export PATH=/usr/local/opt/icu4c/bin:$PATH
 export PATH=/usr/local/opt/imagemagick@6/bin:$PATH
 
+export NVM_DIR="$HOME/.nvm"
+
 # Function
 include () {
   [[ -f "$1" ]] && source "$1"
@@ -69,6 +71,7 @@ include () {
 
 lnvm() {
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 }
 
 lrvm() {
