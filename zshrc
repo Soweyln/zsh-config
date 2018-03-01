@@ -88,13 +88,15 @@ ldocker() {
   eval "$(docker-machine env)"
 }
 
-# Nvim
+# Alias
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
-# Alias
-alias workon='lpyenv && workon'
+if type pyenv > /dev/null 2>&1; then
+  alias workon='lpyenv && workon'
+fi
+
 alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
