@@ -76,6 +76,11 @@ ZSH_HIGHLIGHT_STYLES+=(
 )
 
 # Mapping
+bindkey ^b backward-word
+bindkey ^w forward-word
+bindkey ^a beginning-of-line
+bindkey ^e end-of-line
+bindkey ^h beginning-of-line
 bindkey ^l end-of-line
 bindkey ^r history-incremental-pattern-search-backward
 bindkey ^p history-beginning-search-backward
