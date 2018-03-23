@@ -82,6 +82,8 @@ bindkey ^a beginning-of-line
 bindkey ^e end-of-line
 bindkey ^h beginning-of-line
 bindkey ^l end-of-line
+bindkey ^u backward-kill-line
+bindkey ^k kill-line
 bindkey ^r history-incremental-pattern-search-backward
 bindkey ^p history-beginning-search-backward
 bindkey ^n history-beginning-search-forward
