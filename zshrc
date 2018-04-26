@@ -20,6 +20,10 @@ ldocker() {
   eval "$(docker-machine env)"
 }
 
+# General
+export DYLD_FORCE_FLAT_NAMESPACE=1
+export DISABLE_AUTO_UPDATE=true
+export EDITOR=vim
 export ZSH=$HOME/.oh-my-zsh
 
 unset ZSH_THEME
@@ -39,11 +43,6 @@ fi
 unsetopt nomatch
 unsetopt correctall
 unsetopt auto_name_dirs
-
-# General
-export DYLD_FORCE_FLAT_NAMESPACE=1
-export DISABLE_AUTO_UPDATE=true
-export EDITOR=vim
 
 # Autosuggest
 ZSH_AUTOSUGGEST_USE_ASYNC=1
