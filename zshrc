@@ -106,6 +106,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
+alias v=vim
 
 if type pyenv > /dev/null 2>&1; then
   alias workon='lpyenv && workon'
