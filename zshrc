@@ -33,8 +33,8 @@ plugins=(git gitfast vi-mode zsh-syntax-highlighting zsh-autosuggestions zsh-com
 # Local
 include $HOME/.fzf.zsh
 include $HOME/.zshrc.local
-
-source $ZSH/oh-my-zsh.sh
+include `which virtualenvwrapper.sh`
+include $ZSH/oh-my-zsh.sh
 
 if [ -z "$ZSH_THEME" ]; then
   export ZSH_THEME="gentoo"
