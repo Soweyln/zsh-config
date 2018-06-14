@@ -33,7 +33,6 @@ plugins=(git gitfast vi-mode zsh-syntax-highlighting zsh-autosuggestions zsh-com
 # Local
 include $HOME/.fzf.zsh
 include $HOME/.zshrc.local
-include `which virtualenvwrapper.sh`
 include $ZSH/oh-my-zsh.sh
 
 if [ -z "$ZSH_THEME" ]; then
@@ -101,6 +100,9 @@ export PATH=/usr/local/opt/imagemagick@6/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 export WORKON_HOME=$HOME/.virtualenvs
+
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+include `which virtualenvwrapper.sh`
 
 # Alias
 if type nvim > /dev/null 2>&1; then
