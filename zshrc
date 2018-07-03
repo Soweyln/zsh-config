@@ -104,6 +104,10 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 include `which virtualenvwrapper.sh`
 
+include $HOME/google-cloud-sdk/path.zsh.inc
+include $HOME/google-cloud-sdk/completion.zsh.inc
+include $HOME/.fzf.zsh
+
 # Alias
 if type nvim > /dev/null 2>&1; then
   alias v=nvim
