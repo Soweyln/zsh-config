@@ -11,11 +11,6 @@ lrvm() {
   [ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
 }
 
-lpyenv() {
-  eval "$(pyenv init -)"
-  pyenv virtualenvwrapper
-}
-
 ldocker() {
   eval "$(docker-machine env)"
 }
@@ -30,10 +25,10 @@ unset ZSH_THEME
 
 plugins=(git gitfast vi-mode zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
 
-# Local
 include $HOME/.fzf.zsh
 include $HOME/.zshrc.local
 include $ZSH/oh-my-zsh.sh
+include $HOME/.zsh/completions/tmuxinator
 
 if [ -z "$ZSH_THEME" ]; then
   export ZSH_THEME="gentoo"
@@ -114,12 +109,12 @@ if type nvim > /dev/null 2>&1; then
   alias v=nvim
 fi
 
-if type pyenv > /dev/null 2>&1; then
-  alias workon='lpyenv && workon'
-fi
+alias ta='tmux a'
+alias ts='tmuxinator start'
+alias te='tmuxinator edit'
 
-alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
-alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+alias pg_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+alias pg_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 
 # Defer initialization of nvm until nvm, node or a node-dependent command is
 # run. Ensure this block is only run once if .bashrc gets sourced multiple times
