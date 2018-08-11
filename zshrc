@@ -96,9 +96,7 @@ export PATH=/usr/local/opt/imagemagick@6/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 export WORKON_HOME=$HOME/.virtualenvs
 
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-include `which virtualenvwrapper.sh`
-
+include /usr/local/bin/virtualenvwrapper_lazy.sh
 include $HOME/google-cloud-sdk/path.zsh.inc
 include $HOME/google-cloud-sdk/completion.zsh.inc
 include $HOME/.fzf.zsh
