@@ -96,6 +96,7 @@ export PATH=/usr/local/opt/imagemagick@6/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 export WORKON_HOME=$HOME/.virtualenvs
 export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
+export ANDROID_HOME=$HOME/Library/Android/sdk/
 
 include /usr/local/bin/virtualenvwrapper_lazy.sh
 include $HOME/google-cloud-sdk/path.zsh.inc
