@@ -110,6 +110,7 @@ if type nvim > /dev/null 2>&1; then
 fi
 
 alias ta='tmux a'
+alias tls='tmux ls'
 alias ts='tmuxinator start'
 alias te='tmuxinator edit'
 
