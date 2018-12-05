@@ -118,6 +118,7 @@ alias gb='git --no-pager branch'
 
 alias pg_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 alias pg_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+alias toggle_wifi='sudo ifconfig en0 down && dscacheutil -flushcache && sudo killall -HUP mDNSResponder && sudo ifconfig en0 up'
 
 # Defer initialization of nvm until nvm, node or a node-dependent command is
 # run. Ensure this block is only run once if .bashrc gets sourced multiple times
