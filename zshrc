@@ -114,6 +114,8 @@ alias tls='tmux ls'
 alias ts='tmuxinator start'
 alias te='tmuxinator edit'
 
+alias gb='git --no-pager branch'
+
 alias pg_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 alias pg_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 
