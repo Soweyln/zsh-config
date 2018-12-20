@@ -97,6 +97,7 @@ export NVM_DIR="$HOME/.nvm"
 export WORKON_HOME=$HOME/.virtualenvs
 export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
 export ANDROID_HOME=$HOME/Library/Android/sdk/
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
 include /usr/local/bin/virtualenvwrapper_lazy.sh
 include $HOME/google-cloud-sdk/path.zsh.inc
