@@ -23,7 +23,16 @@ export ZSH=$HOME/.oh-my-zsh
 
 unset ZSH_THEME
 
-plugins=(git gitfast vi-mode zsh-syntax-highlighting zsh-autosuggestions zsh-completions kubectl)
+plugins=(
+  git
+  gitfast
+  vi-mode
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  zsh-completions
+  kubectl
+  terraform
+)
 
 include $HOME/.fzf.zsh
 include $HOME/.zshrc.local
