@@ -135,6 +135,8 @@ alias ts='tmuxinator start'
 alias te='tmuxinator edit'
 
 alias gb='git --no-pager branch'
+alias gs='git show'
+alias gshow='git show'
 alias gsta='git stash'
 alias gstaa='git stash -u'
 
