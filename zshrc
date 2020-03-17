@@ -125,10 +125,7 @@ include $HOME/google-cloud-sdk/completion.zsh.inc
 include $HOME/.fzf.zsh
 
 # Alias
-if type nvim > /dev/null 2>&1; then
-  alias vim=nvim
-  alias v=nvim
-fi
+alias v=vim
 
 alias ta='tmux a'
 alias tls='tmux ls'
