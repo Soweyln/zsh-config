@@ -89,8 +89,6 @@ ZSH_HIGHLIGHT_STYLES+=(
 )
 
 # Mapping
-bindkey ^b backward-word
-bindkey ^w forward-word
 bindkey ^a beginning-of-line
 bindkey ^e end-of-line
 bindkey ^h beginning-of-line
@@ -100,6 +98,7 @@ bindkey ^k kill-line
 bindkey ^r history-incremental-pattern-search-backward
 bindkey ^p history-beginning-search-backward
 bindkey ^n history-beginning-search-forward
+bindkey '^[^?' backward-kill-word
 
 # Path
 export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/icu4c/lib"
