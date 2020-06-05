@@ -3,6 +3,11 @@ include () {
   [[ -f "$1" ]] && source "$1"
 }
 
+lpyenv() {
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+}
+
 lnvm() {
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 }
@@ -113,6 +118,7 @@ export PATH=/usr/local/opt/imagemagick@6/bin:$PATH
 export PATH=$HOME/.virtualenvs/vim/bin:$PATH
 export PATH=$HOME/.virtualenvs/vim3/bin:$PATH
 
+export FPATH=$DATA_REPO/engshare/bin:$FPATH
 export NVM_DIR="$HOME/.nvm"
 export WORKON_HOME=$HOME/.virtualenvs
 export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
@@ -123,6 +129,9 @@ include /usr/local/bin/virtualenvwrapper_lazy.sh
 include $HOME/google-cloud-sdk/path.zsh.inc
 include $HOME/google-cloud-sdk/completion.zsh.inc
 include $HOME/.fzf.zsh
+
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$HOME/.pyenv/bin:$PATH
 
 # Alias
 alias v=vim
@@ -141,3 +150,6 @@ alias gstaa='git stash -u'
 alias pg_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 alias pg_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 alias toggle_wifi='sudo ifconfig en0 down && dscacheutil -flushcache && sudo killall -HUP mDNSResponder && sudo ifconfig en0 up'
+
+autoload -U compinit
+compinit
